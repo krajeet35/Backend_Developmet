@@ -4,6 +4,7 @@ public class Demo2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub 
+		System.out.println(1/10);
 		Demo2 d1 = new Demo2();
 		int duration=2;
 		double res=d1.interest(10000, 12, duration);
