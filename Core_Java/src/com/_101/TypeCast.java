@@ -22,6 +22,20 @@ public class TypeCast {
 		byte b2='b';
 		System.out.println("i: "+i+" b1: "+ b1+" b2: "+b2);
 		
+		System.out.println(Byte.MAX_VALUE);
+		do {
+			System.out.println("anyhow");
+		}
+		while(false);
+		
+		for( int k=0;k<10;k++) {
+			if(k==5) {
+				continue;
+			}
+			System.out.println("k: "+k);
+		}
+		
+		
 
 	}
 
