@@ -10,9 +10,11 @@ public class Demo5 {
 	public static void main(String[] args) {
 		Demo5 d1= new Demo5();
 		d1.a+=100;
+		Demo5 d3=d1;
 		System.out.println(d1.a);
 		d1=null;
 		System.out.println(d1);
+		System.out.println(d3.a);
 		
 		Demo5 d2= new Demo5();
 		System.out.println(d2.a);
