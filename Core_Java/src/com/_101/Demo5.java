@@ -16,6 +16,7 @@ public class Demo5 {
 		d1=null;
 		System.out.println(d1);
 		System.out.println(d3.a);
+		System.out.println(d1.a);
 		
 		Demo5 d2= new Demo5();
 		System.out.println(d2.a);
