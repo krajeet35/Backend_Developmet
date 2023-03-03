@@ -19,6 +19,8 @@ public class Demo5 {
 		System.out.println(d1.a);
 		System.out.println(d3);
 		
+		System.out.println("==================");
+		
 		Demo5 d2= new Demo5();
 		System.out.println(d2.a);
 		
