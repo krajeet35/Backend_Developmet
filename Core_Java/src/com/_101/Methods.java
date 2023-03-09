@@ -17,6 +17,12 @@ public class Methods {
 	}
 	void age(int a) {
 		System.out.println("The age is "+a);
+		if(a>=18) {
+			age();
+		}
+	}
+	void age() {
+		System.out.println("You are eligible for vote.");
 	}
 
 }
