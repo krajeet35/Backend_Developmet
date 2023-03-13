@@ -18,6 +18,7 @@ public class Song {
 	}
 	void play() {
 		System.out.println(artist+" is singing "+title);
+		System.out.println("==================");
 	}
 
 }
