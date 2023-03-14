@@ -14,7 +14,7 @@ public class Song {
 		s2.artist="Eminem";
 		s2.title="Let me love you";
 		s2.play();
-
+		s1.play();
 	}
 	void play() {
 		System.out.println(artist+" is singing "+title);
