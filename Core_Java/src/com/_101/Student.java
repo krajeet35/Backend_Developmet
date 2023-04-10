@@ -39,6 +39,13 @@ public class Student {
 	public void setCourse(String course) {
 		this.course = course;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [roll=" + roll + ", name=" + name + ", course=" + course + "]";
+	}
 	
 
 }
+
+
