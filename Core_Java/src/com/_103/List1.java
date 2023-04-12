@@ -19,6 +19,7 @@ public class List1 {
 		
 		for(int i=0;i<5;i++) {
 			l1.add(i);
+			l1.add(null);
 		}
 		System.out.println(l1);
 		
