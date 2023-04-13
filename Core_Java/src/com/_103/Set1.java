@@ -33,6 +33,22 @@ public class Set1 {
 //		set3.add(null);
 		set3.add("Aj");
 		System.out.println(set3);
+		
+		Comparator1 cm= new Comparator1();
+		Set<Employee> tr1= new TreeSet<>(cm);
+		
+		tr1.add(new Employee(1, "Abhjbj", "eng",50000));
+		tr1.add(new Employee(2, "Ajbjh", "eng",50000));
+		tr1.add(new Employee(2, "hjAj", "eng",60000));
+		
+		System.out.println(tr1);
+Set<Employee> tr2= new TreeSet<>();
+		
+		tr2.add(new Employee(1, "Abhjbj", "eng",50000));
+		tr2.add(new Employee(2, "Ajbjh", "eng",50000));
+		tr2.add(new Employee(2, "hjAj", "eng",60000));
+		
+		System.out.println(tr2);
 	}
 
 }
