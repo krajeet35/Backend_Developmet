@@ -1,5 +1,7 @@
 package com._101;
 
+import java.util.Objects;
+
 public class Student {
 	private int roll;
 	private String name;
@@ -44,6 +46,18 @@ public class Student {
 	public String toString() {
 		return "Student [roll=" + roll + ", name=" + name + ", course=" + course + "]";
 	}
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		Student s1= this;
+		Student s2= (Student)obj;
+		return s1.roll>=s2.roll;
+	}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return Objects.hash(roll);
+	} 
 	
 
 }
