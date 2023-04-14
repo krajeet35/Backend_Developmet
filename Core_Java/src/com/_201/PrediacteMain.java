@@ -29,6 +29,7 @@ public class PrediacteMain {
 		s.add(new Student(18, "kjhfgf", 400));
 		s.add(new Student(20, "kkjjh", 700));
 		
+		
 		s.removeIf(p3);
 		System.out.println(s);
 
