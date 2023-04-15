@@ -1,5 +1,8 @@
 package com._201;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.function.Function;
 
 public class FunctionMain {
@@ -16,6 +19,11 @@ public class FunctionMain {
 		};
 		
 		System.out.println(f2.apply(new Student(4,"ro7",100)));
+	
+	    List<String> l1= new ArrayList<>();
+	    
+	    System.out.println(l1.stream());
+	
 	}
 
 }
