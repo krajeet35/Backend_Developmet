@@ -7,6 +7,8 @@ public class Thread9 {
 		t.fun2();
 	}
 	
+	
+//	Remove synchronized keyword it will remove deadlock condition
 	public synchronized void fun1() {
 		System.out.println("inside fun1");
 	}
