@@ -1,0 +1,19 @@
+package com._202;
+
+public class Common2Main {
+
+	public static void main(String[] args) {
+		Common2 c = new Common2();
+		Common2 c1 = new Common2();
+		
+		Thread6 t1= new Thread6(c);
+		Thread7 t3= new Thread7(c1);
+		
+		Thread t2= new Thread(t1);
+		Thread t4= new Thread(t1);
+		t2.start();
+		t4.start();
+
+	}
+
+}

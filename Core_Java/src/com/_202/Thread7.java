@@ -1,6 +1,6 @@
 package com._202;
 
-public class Thread6 implements Runnable {
+public class Thread7 implements Runnable {
 	Common2 c;
 	
 	
@@ -11,7 +11,7 @@ public class Thread6 implements Runnable {
 		c.fun1();
 	}
 	
-	Thread6(Common2 c){
+	Thread7(Common2 c){
 		this.c=c;
 	}
 
