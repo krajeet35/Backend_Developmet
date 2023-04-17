@@ -1,12 +1,12 @@
 package com._202;
 
 public class Common2 {
-	void fun1() {
-		System.out.println("Inside fun1");
+	void fun1(String name) {
+		System.out.println("Inside fun1 "+name);
 		
 		
 		synchronized (Common2.class) {
-			System.out.println("Inside synchronized block of fun1");
+			System.out.println("Inside synchronized block "+name);
 			
 			try {
 				Thread.sleep(2000);
@@ -16,7 +16,7 @@ public class Common2 {
 			}
 		}
 		
-		System.out.println("End of fun1");
+		System.out.println("End of fun1 "+name);
 	}
 
 }
