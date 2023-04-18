@@ -7,7 +7,7 @@ public class File2 {
 
 	public static void main(String[] args) throws IOException {
 		
-		File f1= new File("abc.text");
+		File f1= new File("abc.txt");
 		if(f1.createNewFile()) {
 			System.out.println("New file created");
 		}
