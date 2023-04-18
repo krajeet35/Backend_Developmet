@@ -19,6 +19,7 @@ public class Serialize1 {
 		
 		
 		System.out.println("done");
+		oo.close();
 
 	}
 
