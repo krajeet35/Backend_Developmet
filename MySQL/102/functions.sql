@@ -22,3 +22,16 @@ select substr("saurabh",2,4);
 select sysdate();
 select date_format( sysdate(), '%d %M %Y');
 select adddate(sysdate(), interval 3 day);
+
+/* Group Functions  or Aggregate functions*/
+select * from student;
+select max(mark) from student;
+select min(mark) from student;
+select  avg(mark) from student;
+select sum(mark) from student;
+select count(mark) from student;
+select count(*) from student;
+select * from student group by mark;
+select * from emp1 where salary>=30000
+ group by eid having deptid =20 
+ order by salary desc;
