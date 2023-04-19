@@ -110,4 +110,15 @@ select * from emp1;
 drop table emp;
 update dept set did=20 where did=10;
 
+/* Adding constraint into exsting table */
+
+create table a1 (id int, name varchar(15));
+alter table a1 modify id int primary key;
+alter table a1 add foreign key(id) references dept(did);
+desc a1;
+insert into a1 values(20,"aj");
+select * from a1;
+select sysdate() from dual;
+select date_format(sysdate(), '%d %M %Y') from dual;
+
 
