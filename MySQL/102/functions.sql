@@ -35,3 +35,7 @@ select * from student group by mark;
 select * from emp1 where salary>=30000
  group by eid having deptid =20 
  order by salary desc;
+ select deptid, min(salary), max(salary), avg(salary) from emp1 group by deptid;
+ select * from dept;
+ select * from emp1;
+ select * from dept,emp1;
