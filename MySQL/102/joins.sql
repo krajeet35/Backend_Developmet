@@ -80,3 +80,39 @@ show tables;
 desc course;
 desc teacher1;
 desc student1;
+
+insert into course values 
+(10,"Java",5000),
+(20,"JS",4000),
+(30,"HTML",1000),
+(5,"CSS",1500);
+
+insert into teacher1 values 
+(100,"Ajeet",5),
+(101,"roy",30),
+(102,"suman",20),
+(103,"summi",10),
+(104,"puja",5),
+(105,"gauri",null);
+
+insert into student1 values 
+(201, "Ram", 10),
+(202, "Ram", 20),
+(203, "Ram", 30),
+(204, "Ram", 5),
+(205, "Ram", 10),
+(206, "Ram", 5),
+(215, "Ram", 20),
+(208, "Ram", 30),
+(211, "Ram", null),
+(214, "Ram", 10);
+
+select * from course;
+select * from teacher1;
+select * from student1;
+
+select s.roll,s.sname, t.tid, t.tname from course c inner join teacher1 t inner 
+join student1 s on t.cid=c.cid and c.cid=s.cid  and t.tname='Ajeet' order by s.roll;
+
+select tname from teacher1 where tname like 'A%';
+
