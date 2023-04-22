@@ -45,4 +45,12 @@ select * from emp1 where salary < all (select salary from emp1 where eid <1);
 
 /* WAQ to display the employee who is getting max saalry in each department */
 
+select * from emp1 where salary in (select max(salary) from emp1 group by deptid);
+
+/* Multiple Columns sub queries*/
+
+/* WAQ to display the employee details whose salary and deptid matches with salary
+and deptid of "Aj" */
+select * from emp1 where (salary, deptid) in ( select salary, deptid from emp1 where 
+ename="Aj");
 
