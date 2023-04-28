@@ -54,3 +54,5 @@ and deptid of "Aj" */
 select * from emp1 where (salary, deptid) in ( select salary, deptid from emp1 where 
 ename="Aj");
 
+/* WAP to find   */
+
