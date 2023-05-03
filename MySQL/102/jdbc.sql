@@ -37,3 +37,6 @@ foreign key(roll) references student(roll)
 alter table student modify email varchar(15) unique;
 select * from student;
 truncate table student;
+Select * from course;
+select * from student_course;
+
