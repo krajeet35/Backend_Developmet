@@ -48,7 +48,20 @@ foreign key(cid) references course(cid)
 
 show tables;
 select * from student;
+select * from admin;
 select * from student_batch;
 select * from course;
 select * from batch;
+delete from batch where batchid=1;
 select * from student_course;
+desc course;
+truncate student_course;
+delete from course where cid=3;
+desc batch;
+truncate batch;
+alter table course add AvailableSeat int;
+alter table batch add AvailableBatchSeat int;
+update course set totalSeat=50 where cid=1;
+update course set availableSeat=totalSeat;
+delete from student_course where roll=1;
+update batch set availablebatchSeat=batchSeat;

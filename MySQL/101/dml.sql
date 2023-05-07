@@ -120,5 +120,5 @@ insert into a1 values(20,"aj");
 select * from a1;
 select sysdate() from dual;
 select date_format(sysdate(), '%d %M %Y') from dual;
-
+alter table course add AvailableSeat int;
 
