@@ -17,3 +17,6 @@ select * from product;
 select * from mystudent;
 select * from hibernate_sequence;
 drop table student;
+
+select * from account;
+update account set name="Ajeet" where acc=4;
