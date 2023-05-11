@@ -20,3 +20,10 @@ drop table student;
 
 select * from account;
 update account set name="Ajeet" where acc=4;
+
+select * from employee;
+select * from employee2;
+show tables;
+select * from employee3;
+select * from employee3_add;
+select * from emp3_add;
