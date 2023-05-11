@@ -4,8 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedNativeQuery(name="allAccount", query="select * from account",resultClass=Account.class)
+@NamedQuery(name="account.getBalance", query="select balance from Account")
 public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

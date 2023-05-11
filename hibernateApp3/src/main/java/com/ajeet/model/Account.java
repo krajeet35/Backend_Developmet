@@ -8,7 +8,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQuery(name="account.getBalance", query="select balance from Account")
 public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

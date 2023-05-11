@@ -144,14 +144,42 @@ public class Main {
 		
 		
 //		Aggregrate function
-		
+		/*
 		String s10= "select sum(balance) from Account";
 		TypedQuery<Long> q10= em.createQuery(s10,Long.class);
 		
 		long sum=q10.getSingleResult();
 		
 		System.out.println(sum);
+		*/
 		
+		
+//		Named query
+		/*
+		Query q11= em.createNamedQuery("account.getBalance");
+		
+		List<Integer> ls= q11.getResultList();
+		
+		ls.forEach(s -> System.out.println(s));
+		*/
+		
+//		Native queries
+		
+		String s12= "select * from account";
+		
+		Query q12= em.createNativeQuery(s12,Account.class);
+		
+		List<Account> ls= q12.getResultList();
+		
+//		ls.forEach(s -> System.out.println(s));
+		
+		
+//		Named Native query
+		Query q13= em.createNamedQuery("allAccount");
+		
+		List<Account> ls1= q13.getResultList();
+		
+		ls1.forEach(s-> System.out.println(s));
 		
 		 
 		
