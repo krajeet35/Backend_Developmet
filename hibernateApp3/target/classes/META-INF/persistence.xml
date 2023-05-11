@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
         version="2.0">
         
-    <persistence-unit name="studentUnit2">
+    <persistence-unit name="hibernate3">
     
     <properties>
     <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
