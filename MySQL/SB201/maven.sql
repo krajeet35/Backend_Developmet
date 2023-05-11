@@ -13,3 +13,7 @@ insert into student values
 (12,"Ayush",700),
 (15,"Kundan",600);
 select * from student;
+select * from product;
+select * from mystudent;
+select * from hibernate_sequence;
+drop table student;

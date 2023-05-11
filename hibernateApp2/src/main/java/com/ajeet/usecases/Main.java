@@ -11,9 +11,11 @@ public class Main {
 	public static void main(String[] args) {
 		EntityManagerFactory emf= Persistence.createEntityManagerFactory("studentUnit2");
 		EntityManager em= emf.createEntityManager();
+		Student s= new Student("preeti",400);
 		
-		Student s= em.find(Student.class, 10);
-		System.out.println(s);
+		em.getTransaction().begin();
+		em.persist(s);
+		em.getTransaction().commit();
 		
 		
 		
