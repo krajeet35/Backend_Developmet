@@ -13,6 +13,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		EntityManager em= EMUtil.provideEMConnection();
+		
+//		One Address in employee class
 		/*
 		Employee emp1= new Employee();
 		emp1.setEname("Ajeet kumar");
@@ -25,6 +27,8 @@ public class Main {
 		
 		em.getTransaction().commit();
 		*/
+		
+//		2 Address in employee class
 		/*
 		Employee2 emp2= new Employee2();
 		
@@ -39,6 +43,9 @@ public class Main {
 		
 		em.getTransaction().commit();
 		*/
+		
+//		Multiple Address in  employee class
+		/*
 		Employee3 emp3=new Employee3();
 		emp3.setName("Ajeet kumar");
 		emp3.setSalary(80000);
@@ -50,6 +57,9 @@ public class Main {
 		em.persist(emp3);
 		
 		em.getTransaction().commit();
+		*/
+		
+		
 		
 		System.out.println("Done...");
 		
