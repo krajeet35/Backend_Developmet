@@ -1,48 +1,58 @@
 package com.ajeet.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 @Entity
-public class Employee {
+public class Employee3 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int eid;
 	private String name;
 	private int salary;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Department3 dept;
+
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", name=" + name + ", salary=" + salary + "]";
+		return "Employee3 [eid=" + eid + ", name=" + name + ", salary=" + salary + ", dept=" + dept + "]";
 	}
+
 	public int getEid() {
 		return eid;
 	}
+
 	public void setEid(int eid) {
 		this.eid = eid;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getSalary() {
 		return salary;
 	}
+
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	
-	public Employee() {
-		// TODO Auto-generated constructor stub
+
+	public Department3 getDept() {
+		return dept;
 	}
-	public Employee(String name, int salary) {
-		super();
-		this.name = name;
-		this.salary = salary;
+
+	public void setDept(Department3 dept) {
+		this.dept = dept;
 	}
-	
 	
 	
 

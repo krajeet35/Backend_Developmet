@@ -1,19 +1,33 @@
 package com.ajeet.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 @Entity
-public class Employee {
+public class Employee6 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int eid;
 	private String name;
 	private int salary;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="did")
+	private Department6 dept;
+	
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", name=" + name + ", salary=" + salary + "]";
+		return "Employee5 [eid=" + eid + ", name=" + name + ", salary=" + salary + ", dept="+dept+ "]";
+	}
+	public Department6 getDept() {
+		return dept;
+	}
+	public void setDept(Department6 dept) {
+		this.dept = dept;
 	}
 	public int getEid() {
 		return eid;
@@ -31,15 +45,6 @@ public class Employee {
 		return salary;
 	}
 	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-	
-	public Employee() {
-		// TODO Auto-generated constructor stub
-	}
-	public Employee(String name, int salary) {
-		super();
-		this.name = name;
 		this.salary = salary;
 	}
 	

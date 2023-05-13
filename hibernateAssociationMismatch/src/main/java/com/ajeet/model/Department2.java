@@ -13,19 +13,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Department {
+public class Department2 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int deptid;
 	private String dname;
 	private String location;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="dept_emp", joinColumns = @JoinColumn(name="did"), inverseJoinColumns = @JoinColumn(name="eid"))
-	private List<Employee> ls= new ArrayList<>();
-	@Override
-	public String toString() {
-		return "Department [deptid=" + deptid + ", dname=" + dname + ", location=" + location + ", ls=" + ls + "]";
-	}
+
 	public int getDeptid() {
 		return deptid;
 	}
@@ -44,19 +38,18 @@ public class Department {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public List<Employee> getLs() {
-		return ls;
-	}
-	public void setLs(List<Employee> ls) {
-		this.ls = ls;
-	}
-	public Department() {
+	
+	public Department2() {
 		// TODO Auto-generated constructor stub
 	}
-	public Department(String dname, String location) {
+	public Department2(String dname, String location) {
 		super();
 		this.dname = dname;
 		this.location = location;
+	}
+	@Override
+	public String toString() {
+		return "Department2 [deptid=" + deptid + ", dname=" + dname + ", location=" + location + "]";
 	}
 	
 	

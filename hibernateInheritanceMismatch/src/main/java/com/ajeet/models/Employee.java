@@ -1,19 +1,23 @@
-package com.ajeet.model;
+package com.ajeet.models;
 
+import javax.annotation.processing.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int eid;
 	private String name;
-	private int salary;
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", name=" + name + ", salary=" + salary + "]";
+		return "Employee [eid=" + eid + ", name=" + name + "]";
 	}
 	public int getEid() {
 		return eid;
@@ -27,22 +31,6 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getSalary() {
-		return salary;
-	}
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-	
-	public Employee() {
-		// TODO Auto-generated constructor stub
-	}
-	public Employee(String name, int salary) {
-		super();
-		this.name = name;
-		this.salary = salary;
-	}
-	
 	
 	
 
