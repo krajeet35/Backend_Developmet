@@ -32,6 +32,12 @@ select * from department6;
 /* Single table */
 show tables;
 select * from employee;
+/* Joined table */
 select * from employee2;
+select * from contractemployee;
+select * from salaryemployee;
+/* table per class */
+show tables;
+select * from employee3;
 select * from contractemployee;
 select * from salaryemployee;

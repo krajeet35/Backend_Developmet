@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 
 @Entity
 //@DiscriminatorValue(value = "cEmp")
-public class ContractEmployee extends Employee2 {
+public class ContractEmployee extends Employee3 {
 	
 	private int wDays;
 	private int costPDay;

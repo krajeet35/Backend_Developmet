@@ -6,8 +6,8 @@ import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 //@DiscriminatorValue(value = "sEmp")
-@PrimaryKeyJoinColumn(name="eid")
-public class SalaryEmployee extends Employee2 {
+//@PrimaryKeyJoinColumn(name="eid")
+public class SalaryEmployee extends Employee3 {
 	
 	private int salary;
 
