@@ -30,3 +30,8 @@ select * from department6;
 
 /* 	Inheritance mismatch */
 /* Single table */
+show tables;
+select * from employee;
+select * from employee2;
+select * from contractemployee;
+select * from salaryemployee;

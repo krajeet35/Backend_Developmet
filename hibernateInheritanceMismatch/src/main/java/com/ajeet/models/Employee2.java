@@ -12,10 +12,10 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="empType", discriminatorType = DiscriminatorType.STRING)
-@DiscriminatorValue(value = "emp")
-public class Employee {
+@Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorColumn(name="empType", discriminatorType = DiscriminatorType.STRING)
+//@DiscriminatorValue(value = "emp")
+public class Employee2 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int eid;

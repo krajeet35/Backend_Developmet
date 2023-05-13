@@ -1,9 +1,11 @@
 package com.ajeet.models;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-public class ContractEmployee extends Employee {
+//@DiscriminatorValue(value = "cEmp")
+public class ContractEmployee extends Employee2 {
 	
 	private int wDays;
 	private int costPDay;

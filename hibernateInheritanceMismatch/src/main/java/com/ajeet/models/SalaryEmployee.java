@@ -1,9 +1,13 @@
 package com.ajeet.models;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-public class SalaryEmployee extends Employee {
+//@DiscriminatorValue(value = "sEmp")
+@PrimaryKeyJoinColumn(name="eid")
+public class SalaryEmployee extends Employee2 {
 	
 	private int salary;
 
