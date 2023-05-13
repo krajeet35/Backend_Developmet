@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +22,7 @@ public class Employee3 {
 	private int salary;
 	
 	
-	@ElementCollection
+	@ElementCollection(fetch=FetchType.EAGER)
 	@Embedded
 	@JoinTable(name="emp3_add", joinColumns = @JoinColumn(name="emp_id"))
 	private List<Address> add= new ArrayList<>();

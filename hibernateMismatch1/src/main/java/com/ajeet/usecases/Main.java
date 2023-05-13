@@ -1,5 +1,8 @@
 package com.ajeet.usecases;
 
+
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import com.ajeet.model.Address;
@@ -7,6 +10,8 @@ import com.ajeet.model.Employee;
 import com.ajeet.model.Employee2;
 import com.ajeet.model.Employee3;
 import com.ajeet.utility.EMUtil;
+
+//import antlr.collections.List;
 
 public class Main {
 
@@ -59,6 +64,15 @@ public class Main {
 		em.getTransaction().commit();
 		*/
 		
+//		Lazy and eager loading
+		
+		Employee3 e1=em.find(Employee3.class, 11);
+		System.out.println(e1.getName());
+		em.close();
+		
+		System.out.println(e1.getEid());
+		List<Address> ad= e1.getAdd();
+		System.out.println(ad);
 		
 		
 		System.out.println("Done...");
@@ -73,7 +87,7 @@ public class Main {
 		
 		
 		
-		em.close();
+//		em.close();
 
 	}
 
