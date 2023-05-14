@@ -3,6 +3,8 @@ package com.ajeet;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.ajeet.dao.PresentBean;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -18,9 +20,14 @@ public class Main {
 //		tr.journey();
 //		tr2.journey();
 		
-		A a1= ctx.getBean("ao", A.class);
+//		A a1= ctx.getBean("ao", A.class);
 		
-		a1.funA();
+//		a1.funA();
+		
+		PresentBean pb= ctx.getBean("pb1",PresentBean.class);
+		
+		pb.present();
+		
 		
 
 	}
