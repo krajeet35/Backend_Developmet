@@ -10,15 +10,20 @@ public class Travel {
 	
 	
 //	Constructor injection point
-//	public Travel(Vehicle v) {
-//	super();
-//	this.v = v;
-//}
+//	public Travel(Vehicle v, int numberOfPerson) {
+//		super();
+//		this.v = v;
+//		this.numberOfPerson = numberOfPerson;
+//	}
+
 	
 //	Setter injection point
 	public void setV(Vehicle v) {
 		this.v = v;
 	}
+
+
+	
 
 
 	public void setNumberOfPerson(int numberOfPerson) {
