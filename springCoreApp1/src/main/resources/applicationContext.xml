@@ -5,13 +5,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		https://www.springframework.org/schema/beans/spring-beans.xsd">
 		
-		<bean id="db" class="com.ajeet.dao.DaoBean"/>
+		<bean id="a2" class="com.ajeet.lifeCycle.A2" init-method="setUp" destroy-method="destroy" lazy-init="true">
 		
-		
-		<bean id="sb" class="com.ajeet.dao.ServiceBean" autowire="constructor"/>
-		
-		<bean id="pb1" class="com.ajeet.dao.PresentBean" autowire="constructor"/>
-		
+		<property name="age" value="25"/>
+		<property name="name" value="Ajeet"/>
+		</bean>
 		
 		
 
