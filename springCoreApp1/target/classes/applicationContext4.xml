@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="s1" class="com.ajeet.collectionInjection.map.Student">
+		<constructor-arg name="roll" value="1"/>
+		<constructor-arg name="name" value="Ajeet"/>
+		<constructor-arg name="marks" value="500"/>
+				
+		</bean>
+		<bean id="s2" class="com.ajeet.collectionInjection.map.Student">
+		<constructor-arg name="roll" value="10"/>
+		<constructor-arg name="name" value="Chanchal"/>
+		<constructor-arg name="marks" value="600"/>
+				
+		</bean>
+		<bean id="s3" class="com.ajeet.collectionInjection.map.Student">
+		<constructor-arg name="roll" value="15"/>
+		<constructor-arg name="name" value="Kumar"/>
+		<constructor-arg name="marks" value="400"/>
+				
+		</bean>
+		<bean id="s4" class="com.ajeet.collectionInjection.map.Student">
+		<constructor-arg name="roll" value="11"/>
+		<constructor-arg name="name" value="Roy"/>
+		<constructor-arg name="marks" value="450"/>
+				
+		</bean>
+		
+		<bean id= "a1" class="com.ajeet.collectionInjection.map.A">
+		<property name="map">
+		<map>
+		<entry key-ref="s1" value="LNCT"/>
+		<entry key-ref="s2" value="PCST"/>
+		<entry key-ref="s3" value="PSBTE"/>
+		<entry key-ref="s4" value="BSEB"/>
+		</map>
+		
+		</property>
+		
+		
+		
+		</bean>
+		
+		
+
+
+	
+
+</beans>

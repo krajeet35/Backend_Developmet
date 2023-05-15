@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="s1" class="com.ajeet.collectionInjection.Student">
+		<constructor-arg name="roll" value="1"/>
+		<constructor-arg name="name" value="Ajeet"/>
+		<constructor-arg name="marks" value="500"/>
+				
+		</bean>
+		<bean id="s2" class="com.ajeet.collectionInjection.Student">
+		<constructor-arg name="roll" value="10"/>
+		<constructor-arg name="name" value="Chanchal"/>
+		<constructor-arg name="marks" value="600"/>
+				
+		</bean>
+		<bean id="s3" class="com.ajeet.collectionInjection.Student">
+		<constructor-arg name="roll" value="15"/>
+		<constructor-arg name="name" value="Kumar"/>
+		<constructor-arg name="marks" value="400"/>
+				
+		</bean>
+		<bean id="s4" class="com.ajeet.collectionInjection.Student">
+		<constructor-arg name="roll" value="11"/>
+		<constructor-arg name="name" value="Roy"/>
+		<constructor-arg name="marks" value="450"/>
+				
+		</bean>
+		
+		<bean id="clg1" class="com.ajeet.collectionInjection.College">
+		<constructor-arg name="collegeName" value="LNCT"/>
+		
+		<property name="students">
+		<list>
+		<ref bean="s1"/>
+		<ref bean="s4"/>
+		</list>
+		
+		</property>
+		
+		</bean>
+		
+		<bean id="clg2" class="com.ajeet.collectionInjection.College">
+		<constructor-arg name="collegeName" value="PCST"/>
+		
+		<property name="students">
+		<list>
+		<ref bean="s2"/>
+		<ref bean="s3"/>
+		</list>
+		
+		</property>
+		
+		</bean>
+
+
+	
+
+</beans>
