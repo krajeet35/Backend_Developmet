@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,11 +43,12 @@ public class StudentController {
 	
 //	PathVariable
 	@RequestMapping("/get/{roll}")
-	public Student get(@PathVariable("roll") Integer roll) {
+	public ResponseEntity<Student> get(@PathVariable("roll") Integer roll) {
 		
 		Student s= new Student(20, "Ajeet", 450,new Address("Kengeri", "Bangalore", "560060"));
-		sList.add(s);
-		return s;
+		HttpHeaders hh= new HttpHeaders();
+		hh.add("user", "admin");
+		return new ResponseEntity<Student>(s,hh, HttpStatus.ACCEPTED);
 	}
 	@RequestMapping("/get2/{roll}/{name}")
 	public Student get2(@PathVariable("roll") Integer roll, @PathVariable("name") String name) {
