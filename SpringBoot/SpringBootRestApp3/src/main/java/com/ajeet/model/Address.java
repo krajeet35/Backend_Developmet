@@ -1,6 +1,11 @@
 package com.ajeet.model;
 
 public class Address {
+	@Override
+	public String toString() {
+		return "Address [city=" + city + ", state=" + state + ", pincode=" + pincode + "]";
+	}
+
 	private String city;
 	private String state;
 	private String pincode;
