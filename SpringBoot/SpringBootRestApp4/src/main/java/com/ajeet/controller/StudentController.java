@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ajeet.entities.Student;
+import com.ajeet.entities.StudentDTO;
 import com.ajeet.exceptions.StudentException;
 import com.ajeet.service.StudentDaoImpl;
 import com.ajeet.service.StudentService;
@@ -55,10 +56,61 @@ public class StudentController {
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<Student> updateStudentDetails(@RequestBody Student s) throws StudentException{
+	public ResponseEntity<Student> updateStudentDetails(@Valid @RequestBody Student s) throws StudentException{
 		Student s1= sService.updateStudentDetails(s);
 		
 		return new ResponseEntity<Student>(s1, HttpStatus.OK);
 	}
+	
+	@PutMapping("/updateMarks/{roll}/{marks}")
+	public ResponseEntity<Student> updateStudentMarks(@PathVariable("roll") Integer roll, @PathVariable("marks") Integer marks) throws StudentException{
+		Student s= sService.updateStudentMarks(roll, marks);
+		return new ResponseEntity<Student>(s, HttpStatus.OK);
+	}
+	
+	@GetMapping("/getStudentByMarks/{marks}")
+	public ResponseEntity<List<Student>> getStudentByMarksHandler(@PathVariable("marks") Integer marks) throws StudentException{
+		List<Student> ls= sService.getStudentByMarks(marks);
+		
+		return new ResponseEntity<List<Student>>(ls, HttpStatus.OK);
+	}
+	
+	@GetMapping("/getStudentName/{roll}")
+	public ResponseEntity<String> getStudentNameHandler(@PathVariable("roll") Integer roll) throws StudentException{
+		String n= sService.getStudentNameByRoll(roll);
+		return new ResponseEntity<String>(n, HttpStatus.OK);
+	}
+	
+	@GetMapping("/getStudentNameAndRoll/{marks}")
+	public ResponseEntity<List<String>> getStudentNameAndRollHandler(@PathVariable("marks") Integer marks) throws StudentException{
+		List<String> ls= sService.getNameAndRollByMarks(marks);
+		
+		return new ResponseEntity<List<String>>(ls, HttpStatus.OK);
+	}
+	
+	@GetMapping("/getStudentNameAndMarks/{marks}")
+	public ResponseEntity<List<StudentDTO>> getStudentNameAndMarksHandler(@PathVariable("marks") Integer marks) throws StudentException{
+		List<StudentDTO> ls= sService.getNameAndMarksByMarks(marks);
+		
+		return new ResponseEntity<List<StudentDTO>>(ls, HttpStatus.OK);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 } 

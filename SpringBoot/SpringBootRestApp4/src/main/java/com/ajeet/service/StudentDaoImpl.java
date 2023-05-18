@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import com.ajeet.entities.Student;
+import com.ajeet.entities.StudentDTO;
 import com.ajeet.exceptions.StudentException;
 import com.ajeet.repositary.StudentDao;
 
@@ -70,10 +71,68 @@ public class StudentDaoImpl implements StudentService {
 		
 		if(opt.isPresent()) {
 			Student s1= sd.save(s);
-			return s1;
+			return s1; 
 		}
 		else {
 			throw new StudentException("Student not found");
+		}
+	}
+
+	@Override
+	public Student updateStudentMarks(Integer roll, Integer grace) throws StudentException {
+		Optional<Student> opt= sd.findById(roll);
+		if(opt.isPresent()) {
+			Student s= opt.get();
+			s.setMarks(s.getMarks()+grace);
+			return sd.save(s);
+		}
+		else {
+			throw new StudentException("Student not found with roll: "+roll);
+		}
+	}
+
+	@Override
+	public List<Student> getStudentByMarks(Integer marks) throws StudentException {
+		List<Student> ls= sd.findByMarks(marks);
+		if(ls.size()==0) {
+			throw new StudentException("Student not found");
+		}
+		else {
+			return ls;
+		}
+	}
+
+	@Override
+	public String getStudentNameByRoll(Integer roll) throws StudentException {
+		String name= sd.getStudentNameByRoll(roll);
+		if(name!=null) {
+			return name;
+		}
+		else {
+			throw new StudentException("Student not found with roll: "+roll);
+		}
+	}
+
+	@Override
+	public List<String> getNameAndRollByMarks(Integer marks) throws StudentException {
+		List<String> ls= sd.getNameAndRollByMarks(marks);
+		if(ls.size()==0) {
+			throw new StudentException("Student not found");
+		}
+		else {
+			return ls;
+		}
+	}
+
+	@Override
+	public List<StudentDTO> getNameAndMarksByMarks(Integer marks) throws StudentException {
+		List<StudentDTO> ls= sd.getNameAndMarksByMarks(marks);
+		
+		if(ls.size()==0) {
+			throw new StudentException("Student not found");
+		}
+		else {
+			return ls;
 		}
 	}
 
