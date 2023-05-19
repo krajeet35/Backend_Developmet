@@ -9,22 +9,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.validation.constraints.Min;
 
 @Entity
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer cid;
+//	@Min(value=3, message="{name.invalid}")
 	private String cname;
 	private Integer fee;
 	
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "courses")
 	private List<Student> students= new ArrayList<>();
 	
-	public Course() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public Integer getCid() {
 		return cid;
 	}
@@ -57,10 +55,9 @@ public class Course {
 		this.students = students;
 	}
 
-	@Override
-	public String toString() {
-		return "Course [cid=" + cid + ", cname=" + cname + ", fee=" + fee + ", students=" + students + "]";
-	}
-	
+//	@Override
+//	public String toString() {
+//		return "Course [cid=" + cid + ", cname=" + cname + ", fee=" + fee + ", students=" + students + "]";
+//	}
 
 }

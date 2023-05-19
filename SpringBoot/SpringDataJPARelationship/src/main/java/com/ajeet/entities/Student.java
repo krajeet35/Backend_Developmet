@@ -3,6 +3,8 @@ package com.ajeet.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -20,13 +22,11 @@ public class Student {
 	private Integer marks;
 	@Embedded
 	private Address add;
+	
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Course> courses= new ArrayList<>();
 	
-	public Student() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public Integer getRoll() {
 		return roll;
 	}
@@ -67,11 +67,11 @@ public class Student {
 		this.courses = courses;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [roll=" + roll + ", name=" + name + ", marks=" + marks + ", add=" + add + ", courses=" + courses
-				+ "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Student [roll=" + roll + ", name=" + name + ", marks=" + marks + ", add=" + add + ", courses=" + courses
+//				+ "]";
+//	}
 	
 
 }
