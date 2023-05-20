@@ -62,5 +62,14 @@ public class GlobalExceptionHandler {
 		ResponseEntity<ErrorDetails> rs= new ResponseEntity<ErrorDetails>(err, HttpStatus.BAD_REQUEST);
 		return rs;
 	}
+	@ExceptionHandler(IllegalStateException.class)
+	public ResponseEntity<ErrorDetails> myExceptionHandler5(IllegalStateException e, WebRequest r){
+		ErrorDetails err= new ErrorDetails(LocalDateTime.now(), e.getMessage(),r.getDescription(false));
+		
+		
+		
+		ResponseEntity<ErrorDetails> rs= new ResponseEntity<ErrorDetails>(err, HttpStatus.BAD_REQUEST);
+		return rs;
+	}
 
 }

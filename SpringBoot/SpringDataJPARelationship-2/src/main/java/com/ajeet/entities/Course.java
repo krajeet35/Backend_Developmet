@@ -10,8 +10,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.Min;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,41 +30,5 @@ public class Course {
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "courses")
 	private List<Student> students= new ArrayList<>();
 	
-	public Integer getCid() {
-		return cid;
-	}
-
-	public void setCid(Integer cid) {
-		this.cid = cid;
-	}
-
-	public String getCname() {
-		return cname;
-	}
-
-	public void setCname(String cname) {
-		this.cname = cname;
-	}
-
-	public Integer getFee() {
-		return fee;
-	}
-
-	public void setFee(Integer fee) {
-		this.fee = fee;
-	}
-
-	public List<Student> getStudents() {
-		return students;
-	}
-
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
-
-//	@Override
-//	public String toString() {
-//		return "Course [cid=" + cid + ", cname=" + cname + ", fee=" + fee + ", students=" + students + "]";
-//	}
 
 }

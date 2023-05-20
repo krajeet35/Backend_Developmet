@@ -1,5 +1,6 @@
 package com.ajeet.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,18 @@ public class StudentServiceImpl implements StudentService {
 		}
 		else {
 			throw new CourseException("Course not found with cname: "+cname);
+		}
+	}
+
+	@Override
+	public List<Student> findStudentByCname(String cname) throws CourseException {
+		List<Student> ls= cRepo.getStudentByCname(cname);
+		
+		if(ls.size()==0) {
+			throw new CourseException("Student not found in this course: "+cname);
+		}
+		else {
+			return ls;
 		}
 	}
 

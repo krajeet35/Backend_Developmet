@@ -13,7 +13,7 @@ import com.ajeet.exceptions.CourseException;
 import com.ajeet.services.CourseService;
 
 @RestController
-@RequestMapping("/courses")
+@RequestMapping("/")
 public class CourseController {
 	@Autowired
 	private CourseService cService;
