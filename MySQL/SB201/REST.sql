@@ -18,3 +18,4 @@ drop database rest2;
 select * from customer;
 select * from customer_seq;
 select * from current_user_session;
+show tables;
